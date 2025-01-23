@@ -28,4 +28,4 @@
 https://github.com/axiaclip-dev/demo-02.git
 
 ## 公開URL
-[Netfy](demo-01.netlify.app)
+[Netfy](https://axiaclip-demo-01.netlify.app/)
