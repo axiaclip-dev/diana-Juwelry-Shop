@@ -1,0 +1,478 @@
+@charset "UTF-8";
+
+/*---------------------------------------
+共通設定のスタイル
+---------------------------------------*/
+:root {
+  /* サイトの基本カラー */
+  --main-color: #09122C;
+  --sub-color: #FF9595;
+
+  /* テキスト用のカラー */
+  --text-color: #202636;
+  --text-light-color: #f6f6f6;
+
+  /* 背景用のカラー */
+  --bg-color-light: #ffffff;
+  --bg-color-header: #ffffff;
+  --bg-color-footer: #09122C;
+
+  /* 透過用のカラー */
+  --main-color-rgb: 52, 43, 56;
+  --sub-color-rgb: 255, 255, 255;
+}
+
+html {
+  font-size: 62.5%; /* 1rem = 10px */
+}
+
+body {
+  color: var(--main-color);
+  background-color: var(--bg-color);
+  font-size: 1.4rem;
+  font-family: "Noto Sans JP",sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  line-height: 1.5;
+  scroll-padding-top: 8rem;
+}
+
+.en {
+  font-family: "Playfair Display", serif;
+  letter-spacing: 0.2rem;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: bottom;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  color: var(--main-color);
+  text-decoration: none;
+  transition: opacity 0.5s ease, color 0.5s ease;
+}
+
+a:hover {
+  opacity: 0.7;
+}
+
+/*---------------------------------------
+セクションの共通スタイル
+---------------------------------------*/
+.container {
+  max-width: 128rem;
+  padding: 0 3.5rem;
+  margin: 0 auto;
+}
+
+.sec {
+  background-color: var(--bg-color-light);
+  align-items: center;
+  padding-top: 10rem;
+}
+
+/* === セクションタイトルの設定 === */
+.sec__title {
+  font-weight: normal;
+  margin-bottom: 4rem;;
+  color: var(--sub-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sec__title-en {
+  display: block;
+  font-size: 3.6rem;
+}
+.sec__title-en::after {
+  content: "｜";
+  margin: 0 0.8rem;
+}
+
+.sec__title-ja {
+  align-items: center;
+}
+
+/*---------------------------------------
+ヘッダーのスタイル
+---------------------------------------*/
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  height: 8rem;
+  background-color: var(--bg-color-header);
+  box-shadow: 0 3px 6px rgb(var(--main-color-rgb), 0.3);
+  border-bottom-right-radius: 5rem;
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.header__logo img {
+  width: 19rem;
+  line-height: 0;
+}
+
+.header__navi {
+  display: flex;
+  gap: 4rem;
+  align-items: center;
+}
+
+.header__navi-item {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.header__navi-link {
+  display: block;
+}
+
+.header__navi-link:hover {
+  font-weight: bold;
+  border-bottom: 0.5rem dotted var(--sub-color);
+}
+
+/*---------------------------------------
+メインビジュアルのスタイル
+---------------------------------------*/
+.mv {
+  background-image: url('../img/mv.png');
+  background-size: cover;
+  background-position: center;
+  height: 50vh;
+  position: relative;
+}
+
+.mv__copy {
+  position: absolute;
+  bottom: 4rem;
+  left: 4rem;
+  background-color: rgba(var(--main-color-rgb), 0.8);
+  color: var(--text-light-color);
+  padding: 2rem;
+}
+
+.mv__catch {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 4rem;
+}
+
+/*---------------------------------------
+プロフィールセクションのスタイル
+---------------------------------------*/
+.profile__detail {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.profile__img {
+  max-width: 32%;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.profile__text {
+  font-size: 1.6rem;
+  line-height: 2;
+  margin-left: 5%;
+}
+.profile__span {
+  display: block;
+  margin-bottom: 1.4rem;
+} 
+
+/*---------------------------------------
+ギャラリーのスタイル
+---------------------------------------*/
+.gallery__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  gap: 2.5rem;
+}
+
+.gallery__item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  box-shadow: 0 3px 6px rgba(var(--main-color-rgb), 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.gallery__item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(var(--main-color-rgb), 0.4);
+}
+
+.gallery__img {
+  width: 100%;
+  height: auto; /* アスペクト比を維持 */
+  object-fit: cover; /* 画像全体を埋める */
+}
+
+.gallery__caption {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(var(--main-color-rgb), 0.8);
+  color: var(--text-light-color);
+  padding: 0.5rem 1rem;
+}
+
+/*---------------------------------------
+お問い合わせのスタイル
+---------------------------------------*/
+.shop {
+  width: 100%;
+  height: 40rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 0.06rem;
+  background: url(../img/shop.png);
+  background-color: rgba(var(--sub-color-rgb), 0.3);
+  background-blend-mode: lighten;
+  background-position: center;
+  background-size: cover;
+  margin-top: 10rem;
+}
+
+.shop__box {
+  width: 100%;
+  max-width: 50rem;
+  background-color: rgba(var(--main-color-rgb), 0.6);
+  padding: 5rem 0;
+  text-align: center;
+}
+
+.shop__title {
+  color: var(--bg-color-light);
+  font-size: 2.8rem;
+  margin-bottom: 2.5rem;
+}
+
+.shop__btn {
+  background-color: var(--sub-color);
+  color: var(--bg-color-light);
+  display: inline-block;
+  padding: 1rem 3rem;
+  position: relative;
+}
+.shop__btn:after {
+  content: "";
+  width: 4rem;
+  height: 1px;
+  background-color: var(--bg-color-light);
+  position: absolute;
+  top: 2rem;
+  right: -2rem;
+}
+.shop__btn a:focus {
+  outline: 2px solid var(--sub-color);
+}
+
+/*---------------------------------------
+フッターのスタイル
+---------------------------------------*/
+.footer {
+  background-color: var(--bg-color-footer);
+  text-align: center;
+  padding: 2rem;
+}
+
+.copyright {
+  color: var(--text-light-color);
+}
+
+/*---------------------------------------
+メディアクエリの設定
+---------------------------------------*/
+/* === 大画面モニター（1440px以上） === */
+@media (min-width: 1440px) {
+  body {
+    padding-top: 8rem;
+  }
+}
+
+@media (min-width: 2560px) {
+  html {
+    font-size: 100%;
+  }
+  body {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 3840px) {
+  html {
+    font-size: 160%;
+  }
+  body {
+    font-size: 1.8rem;
+  }
+}
+
+/* === タブレット・SP共通（767px以下） === */
+@media screen and (max-width: 767px) {
+  body {
+    scroll-padding-top: 6rem;
+  }
+  .container {
+    padding: 0 4rem;
+  }
+  .sec {
+    padding-top: 8rem;
+  }
+  .sec__title {
+    text-align: center;
+  }
+  .sec__title-en {
+    font-size: 2.8rem;
+  }
+  .sp {
+    display: block;
+    padding-bottom: 1.4rem;; 
+  }
+
+  .header {
+    height: 6rem;
+    border-bottom-right-radius: 3rem;
+  }
+  .header__logo img {
+    width: 12rem;
+  }
+  .header__navi {
+    gap: 2rem;
+  }
+  .header__navi-item {
+    font-size: 1.2rem;
+  }
+
+  .mv {
+    margin-bottom: 5rem;
+  }
+  .mv__copy {
+    bottom: 4rem;
+    left: 4rem;
+    padding: 2rem;
+  }
+  .mv__catch {
+    font-size: 2rem;
+  }
+
+  .profile__detail {
+    flex-direction: column;
+  }
+  .profile__img img {
+    border-radius: 50px;
+  }
+  .profile__text {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 10%;
+    line-height: 1.8;
+  }
+  .profile__span {
+    margin-bottom: 2.8rem;
+  } 
+
+  .gallery__list {
+    flex-direction: column;
+  }
+  .gallery__img {
+    object-fit: contain; /* 縦横比を維持して収める */
+  }
+
+  .shop {
+    height: auto;
+    padding: 2rem;
+    margin-top: 6rem;
+  }
+  .shop__title {
+    font-size: 2.4rem;
+  }
+}
+
+/* === 小型SP（540px以下） === */
+@media screen and (max-width: 540px) {
+  body {
+    font-size: 1rem;
+    scroll-padding-top: 5rem;
+  }
+  .container {
+    padding: 0 2rem;
+  }
+  .sec {
+    padding-top: 6rem;
+  }
+
+  .sec__title-en {
+    font-size: 2.5rem;
+  }
+  .sec__title-ja {
+    font-size: 1.1rem;
+  }
+
+  .header {
+    height: 5rem;
+    border-bottom-right-radius: 3rem;
+  }
+  .header__logo img {
+    width: 8rem;
+  }
+  .header__navi {
+    gap: 1.6rem;
+  }
+
+  .mv {
+    height: 50vh;
+    margin-bottom: 3rem;
+  }
+  .mv__copy {
+    max-width: 80%;
+  }
+  .mv__catch {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+  }
+  .mv__text {
+    font-size: 1.1rem;
+  }
+
+  .profile__text {
+    font-size: 1.4rem;
+    letter-spacing: 0.2rem;
+  }
+
+  .shop {
+    height: auto;
+    margin-top: 7rem;
+  }
+  .shop__box {
+    padding: 2.5rem 0;
+  }
+  .shop__title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  .shop__btn:after {
+    width: 2.8rem;
+    top: 1.8rem;
+    right: -1rem;
+  }
+}

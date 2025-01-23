@@ -1,0 +1,586 @@
+@charset "UTF-8";
+
+/*---------------------------------------
+共通設定のスタイル
+---------------------------------------*/
+:root {
+  /* サイトカラー定義 */
+  --main-color: #342B38; /* メインテキスト用 */
+  --sub-color: #FF9595;  /* アクティブ要素や装飾用 */
+
+  /* フォントカラー定義 */
+  --text-color: #342B38;
+  --text-light-color: #f6f6f6;
+
+  /* 背景カラー定義 */
+  --bg-color: #f6f6f6; /* サイトの基本背景 */
+  --bg-color-light: #ffffff; /* コンテンツの背景 */
+  --bg-color-header: #ffffff;
+  --bg-color-footer: #09122C;
+
+  /* フォントサイズ（PC)  */
+  --font-size-xs-pc: 0.9rem;
+  --font-size-sm-pc: 1rem;
+  --font-size-md-pc: 1.3rem;
+  --font-size-lg-pc: 2.5rem;
+  --font-size-xl-pc: 3rem;
+  
+  /* フォントサイズ（SP) */
+  --font-size-xs-sp: 0.9rem;
+  --font-size-sm-sp: 1rem;
+  --font-size-md-sp: 1.125rem;
+  --font-size-lg-sp: 2rem;
+  --font-size-xl-sp: 2.5rem;
+  
+  /* セクションの余白（PC) */
+  --padding-xs-pc: 1rem;
+  --padding-sm-pc: 1.3rem;
+  --padding-md-pc: 3rem;
+  --margin-sm-pc: 1.3rem;
+  --margin-lg-pc: 6.3rem;
+  
+  /* セクションの余白（SP) */
+  --padding-xs-sp: 1rem;
+  --padding-sm-sp: 1.3rem;
+  --margin-xs-sp: 1rem;
+  --margin-sm-sp: 1.3rem;
+  --margin-md-sp: 3.1rem;
+
+  /* 行間 */
+  --line-height-pc: 2;
+  --line-height-sp: 1.6;
+
+  /* 角の丸み */
+  --border-radius-sm-pc: 0.5rem;
+  --border-radius-md-pc: 1rem;
+  --border-radius-header-pc: 50px;
+  --border-radius-mv-pc: 8%;
+  --border-radius-gallery-pc: 8px;
+
+  /* ロゴサイズ */
+  --logo-pc-max-width: 190px;
+  --logo-sp-max-width: 120px;
+
+  /* 最大幅 */
+  --max-width-pc: 1280px;
+  --max-width-mv-copy-pc: 60%;
+  --max-width-profile-img-pc: 16rem;
+  --max-width-profile-text-pc: 48rem;
+
+  --hover-opacity: 0.7;
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  color: var(--main-color);
+  background-color: var(--bg-color);
+  font-size: var(--font-size-sm-pc);
+  font-family: 'Roboto', sans-serif;
+  line-height: var(--line-height-pc);
+  padding-top: 6.4rem;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  color: var(--sub-color);
+  text-decoration: none;
+}
+
+a:hover {
+  opacity: var(--hover-opacity);
+}
+
+/*---------------------------------------
+セクションの共通スタイル
+---------------------------------------*/
+.container {
+  max-width: var(--max-width-pc);
+  padding: 0 var(--padding-xs-pc);
+  margin: 0 auto;
+}
+
+.sec {
+  background-color: var(--bg-color-light);
+  margin-bottom: var(--padding-sm-pc);
+  padding: var(--padding-md-pc);
+  border-radius: var(--border-radius-md-pc);
+}
+
+/* セクションタイトル */
+.sec__title {
+  font-weight: normal;
+  margin: var(--margin-sm-pc) auto;
+  color: var(--sub-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sec__title-en {
+  font-size: var(--font-size-lg-pc);
+}
+
+.sec__title-en::after {
+  content: "｜";
+  margin: 0 8px; /* 余白を調整 */
+  color: var(--sub-color);
+}
+
+.sec__title-ja {
+  font-size: var(--font-size-xs-pc);
+  align-items: center;
+}
+
+/*---------------------------------------
+ヘッダーのスタイル
+---------------------------------------*/
+/* ヘッダー全体 */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background-color: var(--bg-color-header);
+  z-index: 10;
+  padding-right: var(--padding-sm-pc);
+  padding-left: var(--padding-sm-pc);
+  box-shadow: 0 3px 6px rgba(52, 43, 56, 0.3);
+  border-bottom-right-radius: var(--border-radius-header-pc);
+}
+
+/* 内部コンテンツ */
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+/* ロゴ */
+.header__logo {
+  max-width: var(--logo-pc-max-width);
+}
+
+/* ナビゲーション */
+.header__navi {
+  display: flex;
+  gap: var(--font-size-xl-sp);
+}
+
+.header__navi-item {
+  list-style: none;
+}
+
+.header__navi-link {
+  font-size: var(--font-size-md-pc);
+  text-decoration: none;
+  color: var(--main-color);
+}
+
+.header__navi-link:hover {
+  font-weight: bold;
+  border-bottom: 0.2rem dotted var(--sub-color);
+}
+
+/*---------------------------------------
+メインビジュアルのスタイル
+---------------------------------------*/
+.mv {
+  background-image: url('../img/mainvisual.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 25rem;
+  position: relative;
+  margin-bottom: var(--margin-sm-pc);
+  border-radius: var(--border-radius-md-pc);
+}
+
+/* コピー部分 */
+.mv__copy {
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem;
+  background-color: rgba(52, 43, 56, 0.8);
+  padding: var(--padding-xs-pc);
+  border-radius: var(--border-radius-sm-pc);
+  color: var(--text-light-color);
+  max-width: var(--max-width-mv-copy-pc)
+}
+
+/* キャッチフレーズ */
+.mv__catch {
+  font-size: var(--font-size-lg-pc);
+  font-weight: bold;
+  margin-bottom: var(--padding-xxs-pc)
+}
+
+/* 詳細テキスト */
+.mv__text {
+  font-size: var(--font-size-md-sp);
+  padding-left: var(--padding-xxs-pc);
+}
+
+/*---------------------------------------
+プロフィールセクションのスタイル
+---------------------------------------*/
+.profile,
+.gallery {
+  padding-top: 6rem;
+  margin-top: -6rem;
+}
+
+.profile__detail {
+  display: flex;
+  align-items: center;
+  gap: var(--padding-md-pc);
+  border-radius: var(--border-radius-md-pc)
+}
+
+/* プロフィール画像のラッパー */
+.profile__image-wrap {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: var(--max-width-profile-img-pc);
+}
+
+/* プロフィール画像 */
+.profile__img {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: auto;
+  border-radius: var(--border-radius-mv-pc);
+  box-shadow: 10px 10px 2px rgba(52, 43, 56, 0.5);
+}
+
+.profile__text {
+  flex: 1;
+  font-size: var(--font-size-sm-pc);
+  color: var(--text-color);
+  max-width: var(--max-width-profile-text-pc);
+  text-align: left;
+  margin: 0 auto;
+}
+
+/*---------------------------------------
+ギャラリーのスタイル
+---------------------------------------*/
+.gallery__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--margin-sm-pc);
+}
+
+.gallery__item {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--border-radius-gallery-pc);
+  box-shadow: 0 3px 6px rgba(52, 43, 56, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery__img {
+  max-width: 100%;
+  width: 100%;
+  height: 200px;
+  object-fit: cover; /* アスペクト比を維持しながらトリミング */
+  overflow: hidden;
+}
+
+.gallery__caption {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background-color: rgba(52, 43, 56, 0.8);
+  color: var(--text-light-color);
+  padding: 5px 10px;
+  font-size: var(--font-size-xs-pc);
+  border-radius: var(--border-radius-sm-pc);
+  letter-spacing: 0.08rem;
+}
+
+/* ホバー時のスタイル */
+.gallery__item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(52, 43, 56, 0.2);
+}
+
+/*---------------------------------------
+お問い合わせのスタイル
+---------------------------------------*/
+.contact {
+  width: 100%;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  letter-spacing: 0.06rem;
+  background: url(../img/mainvisual.jpg);
+  background-color: rgba(255, 255, 255, 0.5);
+  background-blend-mode: lighten;
+  background-position: center top;
+  background-size: cover;
+}
+
+.contact__box {
+  width: 100%;
+  max-width: 500px;
+  background-color: rgba(52, 43, 56, 0.6);
+  padding: 50px 0;
+  text-align: center;
+}
+
+.contact__title {
+  color: var(--bg-color-light);
+  font-size: 28px;
+  margin-bottom: 25px;
+}
+
+.contact__btn {
+  background-color: var(--sub-color);
+  color: var(--bg-color-light);
+  display: inline-block;
+  font-size: 14px;
+  padding: 10px 30px;
+  position: relative;
+}
+
+.contact__btn:after {
+  content: "";
+  width: 40px;
+  height: 1px;
+  background-color: var(--bg-color-light);
+  position: absolute;
+  top: 20px;
+  right: -20px;
+}
+
+/*---------------------------------------
+フッターのスタイル
+---------------------------------------*/
+#footer {
+  background-color: var(--bg-color-footer);
+  padding: var(--padding-sm-pc) 0;
+  text-align: center;
+}
+
+.copyright {
+  font-size: var(--font-size-xs-pc);
+  color: var(--text-light-color);
+}
+
+/*---------------------------------------
+メデイアクエリの設定
+---------------------------------------*/
+/* 最大幅より大きいディスプレイ */
+@media (min-width: 1280px) {
+  .profile__detail {
+    justify-content: center;
+    gap: 2rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+
+  .profile__image-wrap {
+    margin-right: 2rem;
+  }
+
+  .profile__text {
+    max-width: 50rem;
+  }
+}
+
+/* 950px未満のディスプレイ */
+@media screen and (max-width: 952px) {
+  /* メインビジュアルのSPスタイル */
+  .mv {
+    height: 20rem;
+    margin-bottom: var(--margin-sm-sp);
+  }
+
+  .mv__copy {
+    bottom: 1rem;
+    left: 1rem;
+    padding: 0.8rem;
+    font-size: var(--font-size-sm-sp);
+    max-width: 90%;
+  }
+
+  .mv__catch {
+    font-size: 1.8rem;
+  }
+
+  .mv__text {
+    font-size: var(--font-size-sm-sp);
+    padding-left: 0.3rem;
+  }
+}
+
+/* 767px未満のディスプレイ */
+@media screen and (max-width: 767px) {
+  body {
+    font-size: var(--font-size-sm-sp);
+    line-height: var(--line-height-sp);
+    padding-top: var(--margin-md-sp);
+  }
+
+  /* セクションのSP共通スタイル */
+  .container {
+    padding: 0 var(--padding-sm-sp);
+  }
+
+  .sec {
+    margin-bottom: var(--margin-sm-sp);
+    padding: var(--padding-sm-sp);
+  }
+
+  .sec__title {
+    margin-bottom: var(--margin-sm-sp);
+  }
+
+  .sec__title-en {
+    font-size: var(--font-size-lg-sp);
+    margin-bottom: var(--padding-sm-sp);
+  }
+
+  .sec__title-ja {
+    font-size: var(--font-size-xs-sp);
+  }
+
+  /* ヘッダーのSPスタイル */
+  .header {
+    height: 50px;
+    padding: auto 20px;
+    border-bottom-right-radius: 25px;
+  }
+
+  .header__logo {
+    max-width: var(--logo-sp-max-width)
+  }
+
+  .header__navi {
+    gap: var(--font-size-md-sp);
+  }
+
+  .header__navi-link {
+    font-size: var(--font-size-xs-sp);
+  }
+
+  /* プロフィールのSPスタイル */
+  .profile {
+    margin-bottom: var(--margin-md-sp);
+    padding-top: 3rem; /* 必要に応じて調整 */
+    margin-top: -3rem; /* 必要に応じて調整 */
+  }
+
+  .profile__detail {
+    flex-direction: column;
+    gap: var(--margin-md-sp);
+  }
+
+  .profile__image-wrap {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .profile__img {
+    width: 60%;
+    max-width: 10rem;
+    border-radius: 50%;
+    box-shadow: 8px 8px 2px rgba(52, 43, 56, 0.5);
+  }
+
+  .profile__text {
+    font-size: var(--font-size-sm-sp);
+  }
+
+  .sec__title {
+    text-align: center;
+  }
+
+  /* ギャラリーのSPスタイル */
+  .gallery__list {
+    flex-direction: column;
+    gap: var(--margin-xs-sp);
+  }
+
+  .gallery__item {
+    width: 100%;
+    margin-bottom: var(--margin-xs-sp);
+  }
+
+  .gallery__img {
+    width: 100%;
+    aspect-ratio: 16 / 9; /* アスペクト比を固定 */
+    object-fit: cover; /* トリミングを適用 */
+  }
+
+  /* コンタクトのSPスタイル */
+  .contact {
+    height: auto;
+    padding: 20px;
+  }
+
+  .contact__title {
+    font-size: 24px;
+  }
+
+  /* フッターのSPスタイル */
+  .copyright {
+    font-size: var(--font-size-xs-sp);
+  }
+}
+
+/*---------------------------------------
+スマートフォン（小）のスタイル
+---------------------------------------*/
+@media screen and (max-width: 420px) {
+  /* セクションのSP共通スタイル */
+  .container {
+    padding: 0 var(--padding-xs-sp);
+  }
+
+  .sec {
+    margin-bottom: var(--margin-sm-sp);
+    padding-left: var(--padding-xs-sp);
+    padding-right: var(--padding-xs-sp);
+  }
+
+  .sec__title {
+    margin-bottom: var(--margin-sm-pc);
+  }
+
+  .sec__title-en {
+    font-size: var(--font-size-lg-sp);
+    margin-bottom: var(--padding-sm-sp);
+  }
+
+  .sec__title-ja {
+    font-size: var(--font-size-xs-sp);
+  }
+
+  /* メインビジュアルのSP（小）スタイル */
+  .mv__catch {
+    font-size: var(--padding-sm-pc);
+  }
+
+  .mv__text {
+    font-size: var(--font-size-xs-sp);
+  }
+}

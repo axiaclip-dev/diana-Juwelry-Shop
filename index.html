@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diana Jewelry Shop | デモサイト</title>
+  <meta name="robots" content="noindex">
+  <!-- meta情報の設定 -->
+  <meta name="description" content="ジュエリーデザイナーのDiana Juwery Shopの公式サイトです。これまでに制作したアイテムを掲載しています。お気軽にお立ち寄りください。">
+  <meta property="og:title" content="作品集 | Axia Clip Studio">
+  <meta property="og:description" content="コーダースキル確認用の架空サイトです。単発案件から常駐作業まで、お気軽にご相談ください。">
+  <meta property="og:image" content="https://demo-01.netlify.app/img/axiadclip-ogp.png">
+  <meta property="og:url" content="demo-01.netlify.app">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:description" content="ポートフォリオ用の架空サイトです。BEM記述でクラス定義し、基本的なHTMLとCSSでレスポンシブ設計しています。">
+  <meta name="twitter:image" content="https://demo-01.netlify.app/img/axiadclip-ogp.png">
+  <!-- faviconの設定 -->
+  <link rel="icon" href="img/favicon.ico">
+  <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+  <!-- Google Font読み込み -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Playfair+Display:wght@400:700&display=swap" rel="stylesheet">
+  <!-- CSS読み込み -->
+  <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- header -->
+  <header class="header">
+    <div class="header__inner container">
+      <h1 class="header__logo">
+        <a href="index.html">
+          <img src="img/logo.svg" alt="Dry Flower Life">
+        </a>
+      </h1>
+      <nav aria-label="メインナビゲーション">
+        <ul class="header__navi">
+          <li class="header__navi-item">
+            <a href="#profile" class="header__navi-link en">Profile</a>
+          </li>
+          <li class="header__navi-item">
+            <a href="#gallery" class="header__navi-link en">Gallery</a>
+          </li>
+          <li class="header__navi-item">
+            <a href="#shop" class="header__navi-link en">Shop</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>  
+  <!-- main -->
+  <main class="container">
+    <!-- メインビジュアル -->
+    <section class="sec mv">
+      <div class="mv__copy">
+        <p class="mv__catch">あなただけのアイテムを&nbsp;！</p>
+        <p class="mv__text">
+          ご予算と用途に合わせて、オンリーワンに出会いませんか&nbsp;？
+        </p>
+      </div>
+    </section> 
+    <!-- プロフィールセクション -->
+    <section id="profile" class="sec profile">
+      <div class="profile__wrap">
+      <!-- タイトル -->
+      <h2 class="sec__title">
+        <span class="sec__title-en en">Profile</span>
+        <span class="sec__title-ja">&nbsp;&nbsp;ご挨拶&nbsp;&nbsp;</span>
+      </h2>
+
+      <!-- プロフィール詳細 -->
+      <div class="profile__detail">
+        <!-- プロフィール画像 -->
+        <div class="profile__img">
+          <img src="img/profile.jpg" alt="ジュエリー作家のプロフィール画像">
+        </div>
+
+        <!-- プロフィールテキスト -->
+        <p class="profile__text">
+          趣味でハンドメイド制作を始め、現在はジュエリーデザイナーとして活動しています。<span class="profile__span"> </span>
+          エンゲージリングなどウェディング向けのオーダーはもちろん、日常使い用のアイテムも制作しています。<span class="profile__span"> </span>
+          「日々の感謝を込めた贈答用」や「自分へのご褒美」など、理想のアクセサリーを作ってみませんか。
+        </p>
+      </div>
+    </section>
+    <!-- ギャラリーセクション -->
+    <section id="gallery" class="sec gallery">
+      <!-- タイトル -->
+      <h2 class="sec__title">
+        <span class="sec__title-en en">Gallery</span>
+        <span class="sec__title-ja">&nbsp;&nbsp;商品リスト&nbsp;&nbsp;</span>
+      </h2>
+
+      <!-- No.一覧 -->
+      <ul class="gallery__list">
+        <!-- item-01 -->
+        <li>
+          <div class="gallery__item">
+            <img class="gallery__img" src="img/item-01.jpg" alt="ジュエリー商品No.1">
+            <p class="gallery__caption en">No.1</p>
+          </div>
+        </li>
+        <!-- item-02 -->
+        <li>
+          <div class="gallery__item">
+            <img class="gallery__img" src="img/item-02.jpg" alt="ジュエリー商品No.2">
+            <p class="gallery__caption en">No.2</p>
+          </div>
+        </li>
+        <!-- item-03 -->
+        <li>
+          <div class="gallery__item">
+            <img class="gallery__img" src="img/item-03.jpg" alt="ジュエリー商品No.3">
+            <p class="gallery__caption en">No.3</p>
+          </div>
+        </li>
+        <!-- item-04 -->
+        <li>
+          <div class="gallery__item">
+            <img class="gallery__img" src="img/item-04.jpg" alt="ジュエリー商品No.4">
+            <p class="gallery__caption en">No.4</p>
+          </div>
+        </li>
+        <!-- item-05 -->
+        <li>
+          <div class="gallery__item">
+            <img class="gallery__img" src="img/item-05.jpg" alt="ジュエリー商品No.5">
+            <p class="gallery__caption en">No.5</p>
+          </div>
+        </li>
+        <!-- item-06 -->
+        <li>
+          <div class="gallery__item">
+            <img class="gallery__img" src="img/item-06.jpg" alt="ジュエリー商品No.6">
+            <p class="gallery__caption en">No.6</p>
+          </div>
+        </li>
+      </ul>
+    </section>
+    <!-- Shop -->
+    <section id="shop" class="sec shop">
+      <div class="shop__box">
+        <p class="shop__title"><span class="en">Online&nbsp;Shop</span>はこちら
+        </p>
+        <a href="#" class="shop__btn">商品を見に行く</a>
+      </div>
+    </section>
+  </main>
+  <!-- footer -->
+  <footer class="footer">
+    <p class="copyright en">&copy;&nbsp;2025&nbsp;Dry&nbsp;Flower&nbsp;Life.</p>
+  </footer>  
+</body>
+</html>

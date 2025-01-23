@@ -1,0 +1,26 @@
+# OS関連ファイル
+.DS_Store
+Thumbs.db
+
+# Node.jsやNPMを使う場合のファイル
+node_modules/
+package-lock.json
+
+# IDEやエディタの設定ファイル
+.vscode/
+.idea/
+
+# バックアップファイルやテンポラリファイル
+*.log
+*.bak
+*.tmp
+*.swp
+
+# 画像編集やデザインツールでの中間ファイル
+*.psd
+*.ai
+
+# アップロードしない素材やプライベートファイル
+images/temp/
+config/
+.env
